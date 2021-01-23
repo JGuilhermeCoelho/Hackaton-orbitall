@@ -34,6 +34,7 @@ public class CardController {
     public ResponseEntity<?> updateCard(@PathVariable("id") Long id,  @RequestBody Card card) {
         Card cardAux = cardService.findById(id);
 
+        // os ifs permitem a alteração de um só parametro or vez
         if (card.getCardNumber() != null) {
             cardAux.setCardNumber(card.getCardNumber());
         }
